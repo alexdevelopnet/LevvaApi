@@ -1,0 +1,129 @@
+ <br /><br />
+<h1>Cadastrar Pessoa</h1>
+<form >
+			<div class="form-outline mb-4">
+				<label class="form-label" for="form7Example1">Nome</label>
+				<input type="text" id="form7Example1" class="form-control" 
+				id="nome"
+				value="nome"
+				name="nome"
+				[(ngModel)]="pessoa.nome"
+				/>
+			</div>
+			<div class="row g-2">
+
+				<div class="col-sm-7">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example1">Sobreneme:</label>
+						<input type="text" id="form10Example1" class="form-control" 
+						id="sobrnome"
+						value="sobrenome"
+						name="sobrenome"
+						[(ngModel)]="pessoa.sobreNome"
+						/>
+
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example2">Nacionalidade:</label>
+						<input type="text" id="form10Example2" class="form-control" 
+						id="nacionalidade"
+				value="nacionalidade"
+				name="nacionalidade"
+				[(ngModel)]="pessoa.nacionalidade"
+						/>
+
+					</div>
+				</div>
+
+			</div>	
+			<div class="row g-3">
+
+				<div class="col-sm-4">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example1">Cep:</label>
+						<input type="text" id="form10Example1" class="form-control" 
+						id="cep"
+				value="cep"
+				name="cep"
+				[(ngModel)]="pessoa.cep"
+						/>
+
+					</div>
+				</div>	
+				<div class="col-sm-4">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example2">Estado:</label>
+						<input type="text" id="form10Example2" class="form-control" 
+						id="estado"
+				value="estado"
+				name="estado"
+				[(ngModel)]="pessoa.estado"
+						/>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example2">Cidade:</label>
+						<input type="text" id="form10Example2" class="form-control" 
+						id="cidade"
+				value="cidade"
+				name="cidade"
+				[(ngModel)]="pessoa.cidade"
+						/>
+
+					</div>
+				</div>
+
+			</div>
+			<div class="form-outline mb-4">
+				<label class="form-label" for="form7Example1">Logradouro:</label>
+				<input type="text" id="form7Example1" class="form-control" 
+				id="logradouro"
+				value="logradouro"
+				name="logradouro"
+				[(ngModel)]="pessoa.logradouro"
+				/>
+			</div>
+			<div class="row g-2">
+
+				<div class="col-sm-7">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example1">E-mail::</label>
+						<input type="text" id="form10Example1" class="form-control" 
+						id="nacionalidade"
+				value="email"
+				name="email"
+				[(ngModel)]="pessoa.email"
+						/>
+
+					</div>
+				</div>
+				<div class="col-sm">
+					<div class="form-outline">
+						<label class="form-label" for="form10Example2">Telefone:</label>
+						<input type="text" id="form10Example2" class="form-control" 
+						id="telefone"
+				value="telefone"
+				name="telefone"
+				[(ngModel)]="pessoa.telefone"
+						/>
+
+					</div>
+				</div>
+			</div>	
+ <br/>
+			 
+				<div class="col-sm-2 float-right">
+				<button class="btn btn-success" (click)="criarPessoa()">Salvar</button>
+				 
+				 
+				<button class="btn btn-danger" (click)="cancelar()"> Voltar</button>
+					 
+				
+			</div>
+		</form>		
+ 
+ 

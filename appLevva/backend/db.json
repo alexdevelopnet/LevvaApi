@@ -1,0 +1,40 @@
+{
+  "pessoas": [
+    {
+      "id": 2,
+      "nome": "Alessandra baba",
+      "sobreNome": "cater",
+      "nacionalidade": "brasil",
+      "cep": "08656000",
+      "estado": "São Paulo",
+      "cidade": "São Paulo",
+      "logradouro": "Rua A brasil",
+      "email": "alex@gmail.com",
+      "telefone": "(11) 99999-9999"
+    },
+    {
+      "id": 3,
+      "nome": "Daine",
+      "sobreNome": "Margalhaes",
+      "nacionalidade": "",
+      "logradouro": "",
+      "cep": "065654343",
+      "estado": "São Paulo",
+      "cidade": "São Paulo",
+      "email": "dad@gmail.com",
+      "telefone": "1194232333"
+    },
+    {
+      "id": 4,
+      "nome": "Marta",
+      "sobreNome": "Domingues",
+      "nacionalidade": "",
+      "logradouro": "",
+      "cep": "065654343",
+      "estado": "São Paulo",
+      "cidade": "São Paulo",
+      "email": "martinha@gmail.com",
+      "telefone": "1194232333"
+    }
+  ]
+}

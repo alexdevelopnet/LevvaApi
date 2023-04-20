@@ -1,0 +1,48 @@
+
+    <br>
+    <br>
+    <h2>Cadastro de Pessoas</h2>
+<br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>SobreNome</th>
+                <th>Nacionalidade</th>
+                <th>Logradouro</th>
+                <th>Cep</th>
+                <th>Estado</th>
+                <th>Cidade</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <app-pessoa></app-pessoa>
+        <tbody>
+            <tr *ngFor="let pessoa of listaPessoas">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.sobreNome}}</td>
+                <td>{{pessoa.nacionalidade}}</td>
+                <td>{{pessoa.logradouro}}</td>
+                <td>{{pessoa.cep}}</td>
+                <td>{{pessoa.estado}}</td>
+                <td>{{pessoa.cidade}}</td>
+                <td>{{pessoa.email}}</td>
+                <td>{{pessoa.telefone}}</td>
+                <td>
+                    <button class=" botao-editar btn btn-warning btn-sm" routerLink="/pessoas/editarPessoa/{{pessoa.id}}">
+                        Editar
+                      </button>
+                      <button class="botao-excluir btn btn-danger btn-sm" routerLink="/pessoas/excluirPessoa/{{pessoa.id}}">
+                        Excluir
+                      </button>
+                </td>
+            </tr>
+        </tbody>
+     </table>
+         
+ 
+   
+  
+  
+  

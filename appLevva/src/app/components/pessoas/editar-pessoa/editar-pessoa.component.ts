@@ -38,7 +38,7 @@ export class EditarPessoaComponent   implements OnInit {
   }
   editarPessoa() {
     this.service.editar(this.pessoa).subscribe((Pessoa) => {
-      this.router.navigate(['/'])
+      this.router.navigate(['/listarpessoa'])
     })
   }
   cancelar() {

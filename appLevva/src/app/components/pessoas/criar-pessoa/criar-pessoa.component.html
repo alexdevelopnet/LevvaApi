@@ -1,12 +1,13 @@
- <br /><br />
+ 
+<br /><br />
 <h1>Cadastrar Pessoa</h1>
-<form >
+<form #f="ngForm" [formGroup]="formulario">
 			<div class="form-outline mb-4">
 				<label class="form-label" for="form7Example1">Nome</label>
 				<input type="text" id="form7Example1" class="form-control" 
 				id="nome"
 				value="nome"
-				name="nome"
+				formControlName="nome"
 				[(ngModel)]="pessoa.nome"
 				/>
 			</div>
@@ -18,7 +19,7 @@
 						<input type="text" id="form10Example1" class="form-control" 
 						id="sobrnome"
 						value="sobrenome"
-						name="sobrenome"
+						formControlName="sobrenome"
 						[(ngModel)]="pessoa.sobreNome"
 						/>
 
@@ -30,7 +31,7 @@
 						<input type="text" id="form10Example2" class="form-control" 
 						id="nacionalidade"
 				value="nacionalidade"
-				name="nacionalidade"
+				formControlName="nacionalidade"
 				[(ngModel)]="pessoa.nacionalidade"
 						/>
 
@@ -46,10 +47,10 @@
 						<input type="text" id="form10Example1" class="form-control" 
 						id="cep"
 				value="cep"
-				name="cep"
+				formControlName="cep"
 				[(ngModel)]="pessoa.cep"
 						/>
-
+<div class="text-danger" *ngIf="formulario.get('cep')?.errors">Cep obrigatorio: favor preencher no formato correto : 00000-000</div>
 					</div>
 				</div>	
 				<div class="col-sm-4">
@@ -58,7 +59,7 @@
 						<input type="text" id="form10Example2" class="form-control" 
 						id="estado"
 				value="estado"
-				name="estado"
+				formControlName="estado"
 				[(ngModel)]="pessoa.estado"
 						/>
 
@@ -70,7 +71,7 @@
 						<input type="text" id="form10Example2" class="form-control" 
 						id="cidade"
 				value="cidade"
-				name="cidade"
+				formControlName="cidade"
 				[(ngModel)]="pessoa.cidade"
 						/>
 
@@ -83,7 +84,7 @@
 				<input type="text" id="form7Example1" class="form-control" 
 				id="logradouro"
 				value="logradouro"
-				name="logradouro"
+				formControlName="logradouro"
 				[(ngModel)]="pessoa.logradouro"
 				/>
 			</div>
@@ -95,7 +96,7 @@
 						<input type="text" id="form10Example1" class="form-control" 
 						id="nacionalidade"
 				value="email"
-				name="email"
+				formControlName="email"
 				[(ngModel)]="pessoa.email"
 						/>
 
@@ -107,7 +108,7 @@
 						<input type="text" id="form10Example2" class="form-control" 
 						id="telefone"
 				value="telefone"
-				name="telefone"
+				formControlName="telefone"
 				[(ngModel)]="pessoa.telefone"
 						/>
 

@@ -40,7 +40,8 @@ export class ExcluirPessoaComponent implements OnInit {
     excluirPessoa() {
       if (this.pessoa.id) {
         this.service.excluir(this.pessoa.id).subscribe(() => {
-          this.router.navigate(['/listarPessoa'])
+          alert('Pessoa excluida com sucesso!');
+          this.router.navigate(['/listarpessoa'])
         })
       }
     }

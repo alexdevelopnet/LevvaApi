@@ -44,6 +44,7 @@ namespace LevvaApi.Controllers
         [HttpPut]
         public async Task<ActionResult> Alterar(Pessoa pessoa)
         {
+           // var pessoa = await _context.Pessoas.FindAsync(id);
             _context.Pessoas.Update(pessoa);
             await _context.SaveChangesAsync();
             return Ok();

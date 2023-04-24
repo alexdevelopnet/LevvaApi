@@ -1,11 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { PessoaService } from '../pessoa.service';
 import { Pessoa } from '../pessoa';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
-import { Form, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Cep } from './Cep';
-import { Dados } from './Dados';
 
 @Component({
   selector: 'app-criar-pessoa',
@@ -30,24 +28,10 @@ export class CriarPessoaComponent implements OnInit {
     email: '',
     telefone: ''
   }
-  cep: Cep = {
-    cep: 'string',
-    logradouro: 'string',
-    complemento: 'string',
-    bairro: 'string',
-    localidade: 'string',
-    uf: 'string',
-    unidade: 'string',
-    ibge: 'string',
-    gia: 'string',
-    erro: false
-  }
-
-
+   
   constructor(
     private service: PessoaService,
     private router: Router,
-    private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) {
 
@@ -87,6 +71,26 @@ export class CriarPessoaComponent implements OnInit {
 
   }
 
+  consultarCep(ev: any, f: NgForm) {
+    const cep = ev.target.value;
+    if (cep !== "") {
+      this.service.getConsultarCep(cep).subscribe((resultado) => {
+        console.log(resultado);
+        this.populandoEndereco(resultado, f);
+      });
+    }
+  }
+
+  populandoEndereco(dados: any, f: NgForm) {
+    f.form.patchValue({
+      logradouro: dados.logradouro,
+      complemento: dados.complemento,
+      bairro: dados.bairro,
+      cidade: dados.localidade,
+      estado: dados.uf,
+
+    })
+  }
 
 
 }

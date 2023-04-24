@@ -1,15 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Pessoa } from './pessoa';
-import { Observable } from 'rxjs';
-import { Cep } from './criar-pessoa/Cep';
-import { of } from 'rxjs';
+import { Observable } from "rxjs";
+import { Pessoa } from "./pessoa";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+
+ 
+ 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PessoaService {
   private readonly API = 'https://localhost:44390/api/pessoa'
+  private readonly URLCEP = 'http://viacep.com.br/ws/';
 
   constructor(private http: HttpClient) { }
 
@@ -31,18 +33,8 @@ export class PessoaService {
     const url = `${this.API}/${id}`
     return this.http.delete<Pessoa>(url)
   }
-  buscar(cep: string): Observable<Cep> {
-    {
-      return this.http.get<Cep>(`https://viacep.com.br/ws/${cep}/json/`)
-    }
-  }
-
-  consultaCEP() {
-
-    
-        return this.http.get(`//viacep.com.br/ws/${"08656000"}/json`);
-    
-    
-    return of({});
+ 
+  getConsultarCep(cep: string) {
+    return this.http.get(`${this.URLCEP}${cep}/json`)
   }
 }
